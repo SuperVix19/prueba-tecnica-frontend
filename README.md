@@ -8,7 +8,7 @@ Para instalar y hacer uso del proyecto en tu entorno local, debes de tener lo si
 
 * Node.js (versión 22.18.0)
 * npm (versión 11.5.2)
-* Angular CLI (versión 20.18.0)
+* Angular CLI (versión 20.1.4)
 
 ### Instalación
 
