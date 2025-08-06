@@ -1,59 +1,74 @@
-# PruebaTecnicaFrontend
+# Prueba Técnica Front-End
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.4.
+Este proyecto es una resolución para una prueba técnica para la vacante de desarrollador front-end. La aplicación que se encuentra en este repositorio cuenta con la versión más reciente de Angular y cuenta con los requisitos previamente mencionados en la prueba.  
 
-## Development server
+## Instalación y uso
 
-To start a local development server, run:
+Para instalar y hacer uso del proyecto en tu entorno local, debes de tener lo siguiente:
+
+* Node.js
+* npm
+* Angular CLI (versión 17 o superior)
+
+### Instalación
+
+1. Clonar el repositorio
+
+```bash
+git clone https://github.com/SuperVix19/prueba-tecnica-frontend.git
+```
+
+2. Navegamos al directorio del proyecto
+
+```bash
+cd prueba-tecnica-frontend
+```
+
+3. Instala todas las dependencias
+
+```bash
+npm install
+```
+
+### Uso de la aplicación
+
+1. Podemos ejecutar el servidor de desarrollo de dos maneras
 
 ```bash
 ng serve
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+o
 ```bash
-ng generate component component-name
+ng serve -o
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Uso de Capacitor
 
-```bash
-ng generate --help
-```
+Para cumplir con el requisito de una aplicación híbrida, en el proyecto se utiliza Capacitor. Es una herramienta de código abierto que toma una aplicación web existente (en este caso, el proyecto) y la convierte en una aplicación nativa real tanto para iOS, Android y la web.
 
-## Building
+### Uso
 
-To build the project run:
+1. Cada vez que se haga un cambio, debemos de compilar la aplicación
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+2. Sincronizamos los cambios
 
 ```bash
-ng test
+npx cap sync
 ```
 
-## Running end-to-end tests
+3. Una vez sincronizados, podemos abrir y ejecutar
 
-For end-to-end (e2e) testing, run:
+  * Para abrir en Android:
+    ```bash
+    npx cap open android
+    ```
 
-```bash
-ng e2e
-```
+  * Para abrir en Xcode:
+    ```bash
+    npx cap open ios
+    ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
