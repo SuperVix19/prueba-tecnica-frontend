@@ -3,13 +3,19 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-/* src/styles.css */
+.image-modal-panel {
+  max-width: 95vw !important;
+  max-height: 95vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050;
+}
 
-/* Estilos para el panel del modal de imagen */
 .image-modal-panel .mat-mdc-dialog-container {
-  /* Anulamos los estilos por defecto de Material */
   padding: 0 !important;
   box-shadow: none !important;
   background: transparent !important;
   border-radius: 8px;
+    overflow: visible !important;
 }

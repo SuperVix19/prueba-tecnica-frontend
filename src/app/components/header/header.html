@@ -1,9 +1,8 @@
 <mat-toolbar color="primary" [class.search-active]="mobileSearchActive">
 
-  <!-- Logo y Título (se ocultan en modo búsqueda móvil) -->
   <div class="toolbar-section-start">
     <a routerLink="/home" class="logo">
-      <img src="logo_avance.webp" alt="Avance logo">
+      <img src="assets/logo_avance.webp" alt="Avance logo">
     </a>
   </div>
 
@@ -11,50 +10,54 @@
 
   <div class="toolbar-section-end">
     
-    <!-- Navegación para Escritorio -->
-    <div class="desktop-nav">
-      @if (authService.isLoggedIn$ | async) {
-        <!-- Buscador para Escritorio -->
-        <div class="desktop-search">
-          <mat-form-field appearance="outline" class="search-form-field">
-            <mat-icon matPrefix>search</mat-icon>
-            <input matInput placeholder="Buscar...">
-          </mat-form-field>
-        </div>
+    @if (authService.isLoggedIn$ | async) {
+      <div class="desktop-search">
+        <mat-form-field appearance="outline" class="search-form-field">
+          <mat-icon matPrefix>search</mat-icon>
+          <input matInput placeholder="Buscar...">
+        </mat-form-field>
+      </div>
+      
+      <div class="desktop-nav">
         <a mat-button routerLink="/home">Home</a>
         <a mat-button routerLink="/listado">Listado</a>
         <a mat-button routerLink="/skills">Skills</a>
         <a mat-button (click)="logout()">Cerrar Sesión</a>
-      } @else {
-        <a mat-button routerLink="/login">Login</a>
-      }
-    </div>
+      </div>
 
-    <!-- Icono para activar la búsqueda en móvil -->
-    <button mat-icon-button class="mobile-search-icon" (click)="toggleMobileSearch()">
-      <mat-icon>search</mat-icon>
-    </button>
-
-    <!-- Menú hamburguesa para móvil -->
-    <div class="mobile-nav">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>menu</mat-icon>
+      <button mat-icon-button class="mobile-search-icon" (click)="toggleMobileSearch()">
+        <mat-icon>search</mat-icon>
       </button>
-      <mat-menu #menu="matMenu">
-        <a mat-menu-item routerLink="/home">Home</a>
-        <a mat-menu-item routerLink="/listado">Listado</a>
-        <a mat-menu-item routerLink="/skills">Skills</a>
-        <mat-divider></mat-divider>
-        @if (authService.isLoggedIn$ | async) {
+
+      <div class="mobile-nav">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <a mat-menu-item routerLink="/home">Home</a>
+          <a mat-menu-item routerLink="/listado">Listado</a>
+          <a mat-menu-item routerLink="/skills">Skills</a>
+          <mat-divider></mat-divider>
           <a mat-menu-item (click)="logout()">Cerrar Sesión</a>
-        } @else {
+        </mat-menu>
+      </div>
+
+    } @else {
+      <div class="desktop-nav">
+        <a mat-button routerLink="/login">Login</a>
+      </div>
+      
+      <div class="mobile-nav">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
           <a mat-menu-item routerLink="/login">Login</a>
-        }
-      </mat-menu>
-    </div>
+        </mat-menu>
+      </div>
+    }
   </div>
 
-  <!-- Barra de Búsqueda para Móvil (oculta por defecto) -->
   <div class="mobile-search-bar">
     <button mat-icon-button (click)="toggleMobileSearch()">
       <mat-icon>arrow_back</mat-icon>
