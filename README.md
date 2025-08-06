@@ -35,11 +35,11 @@ npm install
 1. Podemos ejecutar el servidor de desarrollo de dos maneras
 
 ```bash
-ng serve
+npx ng serve
 ```
 o
 ```bash
-ng serve -o
+npx ng serve -o
 ```
 
 ## Uso de Capacitor
@@ -51,7 +51,7 @@ Para cumplir con el requisito de una aplicación híbrida, en el proyecto se uti
 1. Cada vez que se haga un cambio, debemos de compilar la aplicación
 
 ```bash
-ng build
+npx ng build
 ```
 
 2. Sincronizamos los cambios
@@ -64,11 +64,11 @@ npx cap sync
 
   * Para abrir en Android:
     ```bash
-    npx cap open android
+    npx cap run android
     ```
 
   * Para abrir en Xcode:
     ```bash
-    npx cap open ios
+    npx cap run ios
     ```
 
