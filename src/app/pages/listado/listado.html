@@ -1,0 +1,17 @@
+  <div class="listado-container">
+  <h2>Nuestro Catálogo</h2>
+  <p>Explora nuestra colección de ítems. Haz clic en uno para ver más detalles.</p>
+
+  <div class="items-grid">
+    @for (item of items | paginate: { itemsPerPage: 10, currentPage: p }; track item.id) {
+      <div class="item-card" (click)="selectItem(item)">
+      <img [src]="item.download_url" alt="Foto por {{ item.author }}"> <div class="item-title">
+        <p>Autor: {{ item.author }}</p> </div>
+    </div>
+    } @empty {
+      <p>Cargando ítems...</p>
+    }
+  </div>
+
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

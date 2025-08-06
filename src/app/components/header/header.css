@@ -1,0 +1,45 @@
+/* Contenedor principal de la barra de herramientas */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+}
+
+.app-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #020202;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.desktop-nav a {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #020202;
+}
+
+/* --- Lógica Responsiva --- */
+
+.desktop-nav {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+}

@@ -1,0 +1,46 @@
+.listado-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.item-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.item-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.item-title {
+  padding: 15px;
+  background-color: #fafafa;
+  font-size: 0.9rem;
+}
+
+/* Estilo para los controles de paginación */
+pagination-controls {
+  display: flex;
+  justify-content: center;
+}

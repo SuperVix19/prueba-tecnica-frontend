@@ -1,0 +1,57 @@
+<div class="home-container">
+  @if (authService.isLoggedIn$ | async) {
+    <section class="greeting-section">
+      <h2>¡Bienvenida/o de vuelta!</h2>
+      <p>Nos alegra verte de nuevo por aquí.</p>
+    </section>
+  }
+
+  <div class="slider-container">
+    <div class="slide">
+      <img src="https://picsum.photos/id/10/1200/400" alt="Banner 1">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/id/24/1200/400" alt="Banner 2">
+    </div>
+    <div class="slide">
+      <img src="https://picsum.photos/id/42/1200/400" alt="Banner 3">
+    </div>
+  </div>
+
+  <section class="cards-section">
+    <h3>Nuestros Servicios</h3>
+    <div class="cards-grid">
+      @for (card of cards; track card.title) {
+        <mat-card class="info-card">
+          <img mat-card-image [src]="card.imageUrl" alt="{{ card.title }}" (click)="openImageModal(card.imageUrl)" class="card-image-clickable">
+          <mat-card-header>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ card.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+
+  <section class="about-us-section">
+    <h3>Acerca de Nosotros</h3>
+    <p>Avance y Tecnología en Plásticos fue fundada en la Cd. de Chihuahua en Agosto de 1988 por dos jóvenes estudiantes continuando un proyecto escolar, ofreciendo la fabricación de productos y servicios relacionados con el plástico y el acrílico.</p>
+    <p>En sus inicios Avance y Tecnología en Plásticos contaba con un pequeño equipo de trabajo integrado por 3 personas, mismas que realizaban todas las operaciones, adoptando como Misión "La Satisfacción Total de Nuestros Clientes".</p>
+  </section>
+
+  <section class="action-section">
+    <a mat-raised-button color="primary" routerLink="/listado">Ver Listado Completo</a>
+  </section>
+
+  @if (selectedItem) {
+    <section class="selected-item-section">
+      <h3>Detalles del Ítem Seleccionado</h3>
+      <div class="item-details-content">
+        <img [src]="selectedItem.url || selectedItem.imageUrl" alt="{{ selectedItem.title }}">
+        <p>{{ selectedItem.title }}</p>
+      </div>
+    </section>
+  }
+</div>

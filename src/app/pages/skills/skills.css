@@ -1,0 +1,317 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+  background: #1D1F20;
+}
+
+h1{
+    text-align: center;
+}
+
+section{
+    padding: 3rem 2rem;
+    padding-bottom: 40px; 
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+/* Contenedor principal flexible */
+.wrap {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Contenedor de cada tarjeta */
+.tarjeta-wrap {
+    margin: 10px;
+    perspective: 800px;
+}
+
+/* Estilo y animación de la tarjeta */
+.tarjeta {
+    width: 300px;
+    height: 350px;
+    background: #A7CCED;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+}
+
+.tarjeta-wrap:hover .tarjeta {
+    transform: rotateY(180deg);
+}
+
+/* Estilo para ambas caras de la tarjeta */
+.adelante, .atras {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+/* Cara trasera de la tarjeta */
+.atras {
+    transform: rotateY(180deg);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    background: #A7CCED;
+}
+
+
+.card1{
+	background-image: url(http://1.1m.yt/J9Kw7kl.jpg);
+	background-size: cover;
+}
+
+.card2{
+	background-image: url(http://1.1m.yt/dlxMf3R.jpg);
+	background-size: cover;
+}
+
+.card3{
+	background-image: url(http://3.1m.yt/EUB_xE.jpg);
+	background-size: cover;
+}
+
+/*--------*/
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.menu li {
+  margin-right: 70px;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+
+.menu a svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+}
+
+.menu a svg path {
+  fill: transparent;
+  stroke-width: 5px;
+  stroke: currentColor;
+  stroke-dasharray: 1210.709716796875;
+  stroke-dashoffset: -1210.709716796875;
+  transition: stroke-dashoffset 0.5s cubic-bezier(0.29, 0.68, 0.74, 1.02);
+}
+
+.menu a:hover svg path {
+  stroke-dashoffset: 0;
+}
+
+/* ------- */
+
+.skills-container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.skill-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.skill-card img {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+/* --- ANIMACIÓN DE REVELADO --- */
+
+/* 1. Estado inicial del elemento: invisible y desplazado */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* 2. Estado final: visible y en su tamaño original */
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animación escalonada */
+.skill-card.reveal-on-scroll.visible:nth-child(1) { transition-delay: 0.1s; }
+.skill-card.reveal-on-scroll.visible:nth-child(2) { transition-delay: 0.2s; }
+.skill-card.reveal-on-scroll.visible:nth-child(3) { transition-delay: 0.3s; }
+
+
+
+/* Formulario Animado y botones */
+
+.submit-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  position: relative;
+  width: 150px; /* Ancho inicial */
+}
+
+/* Estado cuando tiene la clase .success */
+.submit-btn.success {
+  background-color: #4caf50;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.submit-btn .btn-text {
+  transition: opacity 0.2s ease;
+}
+
+.submit-btn.success .btn-text {
+  opacity: 0;
+}
+
+.submit-btn::after {
+  content: '✔';
+  font-size: 24px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s 0.2s ease;
+}
+
+.submit-btn.success::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-red{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.push-btn {
+  background-color: #f44336;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #d32f2f;
+  transition: all 0.1s ease-in-out;
+}
+
+.push-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 #d32f2f;
+}
+
+.form-wrapper {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-step h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* --- ANIMACIÓN --- */
+.active-step {
+  animation: fadeInUp 0.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --- RESPONSIVA --- */
+
+@media (max-width: 768px) {
+    .wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+}

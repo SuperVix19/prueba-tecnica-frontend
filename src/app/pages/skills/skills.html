@@ -1,0 +1,172 @@
+<section>
+    <h1>Tarjetas Flip 3D</h1>
+
+    <div class="wrap">
+        <div class="tarjeta-wrap">
+            <div class="tarjeta">
+                <div class="adelante card1"></div>
+                <div class="atras">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum, suscipit, aspernatur!</p>
+                </div>
+            </div>
+        </div>
+        <div class="tarjeta-wrap">
+            <div class="tarjeta">
+                <div class="adelante card2"></div>
+                <div class="atras">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum, suscipit, aspernatur!</p>
+                </div>
+            </div>
+        </div>
+        <div class="tarjeta-wrap">
+            <div class="tarjeta">
+                <div class="adelante card3"></div>
+                <div class="atras">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum, suscipit, aspernatur!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h1>Header</h1>
+
+    <ul class="menu">
+        <li>
+            <a href="#0">
+            About
+            <svg preserveAspectRatio="none" viewBox="0 0 546.714 178.143"><path d="M546.214 89.072c0 48.917-122.162 88.571-272.857 88.571C122.662 177.643.5 137.988.5 89.072.5 40.155 122.662.5 273.357.5c150.695 0 272.857 39.655 272.857 88.572z"/></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#0">
+            Projects
+            <svg preserveAspectRatio="none" viewBox="0 0 546.714 178.143"><path d="M546.214 89.072c0 48.917-122.162 88.571-272.857 88.571C122.662 177.643.5 137.988.5 89.072.5 40.155 122.662.5 273.357.5c150.695 0 272.857 39.655 272.857 88.572z"/></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#0">
+            Clients
+            <svg preserveAspectRatio="none" viewBox="0 0 546.714 178.143"><path d="M546.214 89.072c0 48.917-122.162 88.571-272.857 88.571C122.662 177.643.5 137.988.5 89.072.5 40.155 122.662.5 273.357.5c150.695 0 272.857 39.655 272.857 88.572z"/></svg>
+            </a>
+        </li>
+        <li>
+            <a href="#0">
+            Contact
+            <svg preserveAspectRatio="none" viewBox="0 0 546.714 178.143"><path d="M546.214 89.072c0 48.917-122.162 88.571-272.857 88.571C122.662 177.643.5 137.988.5 89.072.5 40.155 122.662.5 273.357.5c150.695 0 272.857 39.655 272.857 88.572z"/></svg>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<section>
+    <div class="skills-container">
+        <h2>Mis Habilidades</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="angular.svg" alt="Angular Icon">
+                <h3>Angular</h3>
+            </div>
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="typescript.svg" alt="TypeScript Icon">
+                <h3>TypeScript</h3>
+            </div>
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="css.svg" alt="CSS Icon">
+                <h3>CSS / SCSS</h3>
+            </div>
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="html.svg" alt="HTML Icon">
+                <h3>HTML5</h3>
+            </div>
+    
+        </div>
+        <div class="skills-grid">
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="mysql.svg" alt="MySQL Icon">
+                <h3>MySQL</h3>
+            </div>
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="jquery.svg" alt="jQuery Icon">
+                <h3>jQuery</h3>
+            </div>
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="css.svg" alt="CSS Icon">
+                <h3>CSS / SCSS</h3>
+            </div>
+
+            <div class="skill-card reveal-on-scroll">
+                <img src="html.svg" alt="HTML Icon">
+                <h3>HTML5</h3>
+            </div>
+    
+        </div>
+    </div>
+</section>
+
+<section>
+    <h1>Botón</h1>
+
+    <div class="btn-red">
+        <button class="push-btn">Presióname</button>
+    </div>
+</section>
+
+<section>
+    <h1>Formulario Multi-Paso Animado</h1>
+
+    <div class="skills-container">
+        <div class="form-wrapper">
+            <form [formGroup]="multiStepForm" (ngSubmit)="submitForm()">
+            
+            @if (currentStep === 1) {
+                <div class="form-step active-step">
+                <h3>Paso 1: Datos Personales</h3>
+                <input formControlName="nombre" placeholder="Nombre completo">
+                <input formControlName="email" placeholder="Correo electrónico" type="email">
+                </div>
+            }
+
+            @if (currentStep === 2) {
+                <div class="form-step active-step">
+                <h3>Paso 2: Cuenta</h3>
+                <input formControlName="usuario" placeholder="Nombre de usuario">
+                <input formControlName="password" placeholder="Contraseña" type="password">
+                </div>
+            }
+
+            @if (currentStep === 3) {
+                <div class="form-step active-step">
+                    <h3>Paso 3: ¡Listo!</h3>
+                    <p>Revisa tu información y envía el formulario.</p>
+
+                    <div class="button-showcase">
+                        <button button mat-raised-button color="primary" type="submit" class="submit-btn" (click)="onAnimateSubmit($event)">
+                            <span class="btn-text">Enviar</span>
+                        </button>
+                    </div>
+                </div>
+            }
+
+            <div class="navigation-buttons">
+                @if (currentStep > 1) {
+                <button mat-stroked-button type="button" (click)="prevStep()">Anterior</button>
+                }
+                @if (currentStep < 3) {
+                <button mat-raised-button color="accent" type="button" (click)="nextStep()">Siguiente</button>
+                }
+            </div>
+
+            </form>
+        </div>
+    </div>
+</section>

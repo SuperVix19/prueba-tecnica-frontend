@@ -1,0 +1,35 @@
+/* Contenedor principal para centrar la tarjeta en la pantalla */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  padding: 20px;
+}
+
+/* Estilo de la tarjeta que contiene el formulario */
+mat-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button[mat-raised-button] {
+  width: 100%;
+  padding: 18px 0;
+  font-size: 1rem;
+}
