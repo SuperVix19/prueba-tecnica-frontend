@@ -66,6 +66,17 @@ h3 {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
+.action-section {
+  text-align: center;
+}
+
+.action-section h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 15px; 
+  padding-bottom: 4rem;
+}
+
 .action-section a {
   padding: 15px 30px;
   font-size: 1rem;

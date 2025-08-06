@@ -24,6 +24,7 @@ export class HeaderComponent {
 
   constructor(public authService: AuthService){}
 
+  //Cerrar sesión
   logout() {
     this.authService.logout();
   }

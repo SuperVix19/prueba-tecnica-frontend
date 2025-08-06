@@ -16,6 +16,8 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
   multiStepForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
+
+    //Las necesitamos para simular el formulario de prueba
     this.multiStepForm = this.fb.group({
       nombre: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -24,6 +26,7 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  //Parte del formulario y simulación de envío de datos
   nextStep() {
     if (this.currentStep < 3) {
       this.currentStep++;
@@ -43,7 +46,7 @@ export class SkillsComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-
+  //Se utiliza para mostrar las tarjetas de Mis Habilidades
   ngAfterViewInit(){
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

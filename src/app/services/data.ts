@@ -6,8 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class DataService {
+  //canal reactivo para compartir el item seleccionado entre componentes
   public selectedItem = new BehaviorSubject<any>(null);
 
+  //Emite un nuevo item seleccionando a todos los suscriptores
   updateSelectedItem(Item: any){
     this.selectedItem.next(Item);
   }

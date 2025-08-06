@@ -40,20 +40,21 @@ export class HomeComponent implements OnDestroy {
     }
   ];
 
+  //Cuando hacemos clic en el botón de listado, home mostrará la información de Listado
   constructor(public authService: AuthService,private dataService: DataService, public dialog: MatDialog){
     this.suscription = this.dataService.selectedItem.subscribe(item => this.selectedItem = item);
   }
 
+  //Lo autilizamos para el modal de las tres cards
   openImageModal(imageUrl: string): void{
 
     this.dialog.open(ImageModal, {
       data: {imageUrl: imageUrl},
       panelClass: 'image-modal-panel'
     });
-
-    console.log('Modal para imagen', imageUrl);
   }
 
+  //Destruimos el componente de Home
   ngOnDestroy() {
     this.suscription.unsubscribe();
   }

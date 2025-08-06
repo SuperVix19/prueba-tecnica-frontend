@@ -22,6 +22,7 @@ export class LoginComponent {
   loginSuccess = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router){
+    //Los campos requeridos
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -30,14 +31,14 @@ export class LoginComponent {
 
   onSubmit() {
     if(this.loginForm.valid){
-      console.log('Fom correcto');
+      //Si los campos son correctos, nos permitirá acceder
       this.loginSuccess = true;
       const{email, password} = this.loginForm.value;
       this.authService.login(email,password);
 
       this.router.navigate(['/home']);
     } else{
-      console.log('Form inválido');
+      //Si no, dará error
       this.loginForm.markAllAsTouched();
     }
   }
