@@ -25,6 +25,27 @@
   color: #020202;
 }
 
+
+.map-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.map-container iframe {
+  width: 100%; 
+  height: 250px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.map-container h3 {
+  margin-bottom: 10px;
+}
+
+
+
 /* --- Lógica Responsiva --- */
 
 /* Cuando la pantalla es de 768px o menos */

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  border-radius: 8px;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+img {
+  max-width: 95vw;
+  max-height: 95vh;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background-color: white;
+  color: black;
+}

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ImageModal } from '../../components/image-modal/image-modal';
 
 @Component({
   selector: 'app-home',
@@ -45,9 +46,10 @@ export class HomeComponent implements OnDestroy {
 
   openImageModal(imageUrl: string): void{
 
-    // this.dialog.open(ImageModalComponent, {
-    //   data: {imageUrl: imageUrl}
-    // });
+    this.dialog.open(ImageModal, {
+      data: {imageUrl: imageUrl},
+      panelClass: 'image-modal-panel'
+    });
 
     console.log('Modal para imagen', imageUrl);
   }

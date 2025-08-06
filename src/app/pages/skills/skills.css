@@ -30,13 +30,11 @@ section{
     flex-wrap: wrap;
 }
 
-/* Contenedor de cada tarjeta */
 .tarjeta-wrap {
     margin: 10px;
     perspective: 800px;
 }
 
-/* Estilo y animación de la tarjeta */
 .tarjeta {
     width: 300px;
     height: 350px;
@@ -51,7 +49,6 @@ section{
     transform: rotateY(180deg);
 }
 
-/* Estilo para ambas caras de la tarjeta */
 .adelante, .atras {
     width: 100%;
     height: 100%;
@@ -61,7 +58,6 @@ section{
     backface-visibility: hidden;
 }
 
-/* Cara trasera de la tarjeta */
 .atras {
     transform: rotateY(180deg);
     padding: 15px;
@@ -74,21 +70,6 @@ section{
     background: #A7CCED;
 }
 
-
-.card1{
-	background-image: url(http://1.1m.yt/J9Kw7kl.jpg);
-	background-size: cover;
-}
-
-.card2{
-	background-image: url(http://1.1m.yt/dlxMf3R.jpg);
-	background-size: cover;
-}
-
-.card3{
-	background-image: url(http://3.1m.yt/EUB_xE.jpg);
-	background-size: cover;
-}
 
 /*--------*/
 
@@ -169,20 +150,17 @@ a {
 
 /* --- ANIMACIÓN DE REVELADO --- */
 
-/* 1. Estado inicial del elemento: invisible y desplazado */
 .reveal-on-scroll {
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* 2. Estado final: visible y en su tamaño original */
 .reveal-on-scroll.visible {
   opacity: 1;
   transform: scale(1);
 }
 
-/* Animación escalonada */
 .skill-card.reveal-on-scroll.visible:nth-child(1) { transition-delay: 0.1s; }
 .skill-card.reveal-on-scroll.visible:nth-child(2) { transition-delay: 0.2s; }
 .skill-card.reveal-on-scroll.visible:nth-child(3) { transition-delay: 0.3s; }
@@ -201,7 +179,7 @@ a {
   transition: all 0.4s ease-in-out;
   overflow: hidden;
   position: relative;
-  width: 150px; /* Ancho inicial */
+  width: 150px;
 }
 
 /* Estado cuando tiene la clase .success */

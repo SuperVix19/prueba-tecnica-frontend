@@ -2,3 +2,14 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* src/styles.css */
+
+/* Estilos para el panel del modal de imagen */
+.image-modal-panel .mat-mdc-dialog-container {
+  /* Anulamos los estilos por defecto de Material */
+  padding: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 8px;
+}
