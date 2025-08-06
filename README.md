@@ -6,8 +6,8 @@ Este proyecto es una resolución para una prueba técnica para la vacante de des
 
 Para instalar y hacer uso del proyecto en tu entorno local, debes de tener lo siguiente:
 
-* Node.js
-* npm
+* Node.js (versión 8 o superior)
+* npm (versión 9 o superior)
 * Angular CLI (versión 17 o superior)
 
 ### Instalación
